@@ -40,11 +40,6 @@ struct setcolor {
         return *out;
     }
 
-    auto &operator<<( std::ios_base &( *func )(std::ios_base &)) const {
-        *out << func;
-        return *this;
-    }
-
     friend setcolor const &operator<<( std::ostream &out, setcolor const &wrap ) {
         wrap.out = &out;
         return wrap;
