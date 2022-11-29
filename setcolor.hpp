@@ -40,9 +40,9 @@ struct setcolor {
         return *out;
     }
 
-    friend setcolor const &operator<<( std::ostream &out, setcolor const &wrap ) {
-        wrap.out = &out;
-        return wrap;
+    friend setcolor const &operator<<( std::ostream &out, setcolor const &sColor ) {
+        sColor.out = &out;
+        return sColor;
     }
 
     mutable std::ostream *out;
